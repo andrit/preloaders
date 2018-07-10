@@ -1,0 +1,591 @@
+
+<?php
+if(isset($_POST['submit'])){
+	$firstranking = $_REQUEST['input1'];
+	$secondranking = $_REQUEST['input2'];
+	$thirdranking = $_REQUEST['input3'];
+	$fourthranking = $_REQUEST['input4'];
+	$fifthranking = $_REQUEST['input5'];
+	$sixthranking = $_REQUEST['input6'];
+	$name = $_REQUEST['whoareyou'];
+
+	echo $name . 
+		'has voted Preloader 1 is ranked: ' .
+		$firstranking .
+		'Preloader 2 is ranked: ' .
+		$secondranking .
+		'Preloader 3 is ranked: ' .
+		$thirdranking .
+		'Preloader 4 is ranked: ' .
+		$fourthranking .
+		'Preloader 5 is ranked: ' .
+		$fifthranking .
+		'Preloader 6 is ranked: ' .
+		$sixthranking . '.';
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	label{
+		margin: 5px 20px;
+	}
+	.loader-wrapper{
+		position: relative;
+		  height: 300px;
+		  width: 800px;
+		  margin: 30px 10px;
+	}
+	.loader-wrapper-thin{
+		position: relative;
+		  height: 150px;
+		  width: 800px;
+		  background-color: #eee;
+		  margin: 30px 10px;
+	}
+		.loader {
+		    border: 16px solid #f3f3f3; /* Light grey */
+		    border-top: 16px solid #3498db; /* Blue */
+		    border-bottom: 16px solid #3498db; /* Blue */
+		    border-radius: 50%;
+		    width: 120px;
+		    height: 120px;
+		    animation: spin 2s linear infinite;
+		}
+
+		.loader .miniloader {
+		    border: 16px solid #f3f3f3; /* Light grey */
+		    border-left: 16px solid #3498db; /* Blue */
+		    border-right: 16px solid #3498db; /* Blue */
+		    border-radius: 50%;
+		    width: 90px;
+		    height: 90px;
+		    animation: spin 2s alternate infinite;
+		    
+		}
+
+
+		@keyframes spin {
+		    0% { transform: rotate(0deg); }
+		    100% { transform: rotate(360deg); }
+		}
+
+
+		/*ball loading*/
+
+		@import url(https://fonts.googleapis.com/css?family=Montserrat);
+.ball-loader {
+  position: relative;
+  width: 800px;
+  height: 300px;
+  font-family: Montserrat;
+}
+
+.wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.text {
+  color: #fbae17;
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.bounceball {
+  position: relative;
+  display: inline-block;
+  height: 37px;
+  width: 15px;
+}
+.bounceball:before {
+  position: absolute;
+  content: '';
+  display: block;
+  top: 0;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fbae17;
+  -webkit-transform-origin: 50%;
+          transform-origin: 50%;
+  -webkit-animation: bounce 500ms alternate infinite ease;
+          animation: bounce 500ms alternate infinite ease;
+}
+
+@-webkit-keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    -webkit-transform: scaleX(2);
+            transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+@keyframes bounce {
+  0% {
+    top: 30px;
+    height: 5px;
+    border-radius: 60px 60px 20px 20px;
+    -webkit-transform: scaleX(2);
+            transform: scaleX(2);
+  }
+  35% {
+    height: 15px;
+    border-radius: 50%;
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    top: 0;
+  }
+}
+
+  /*dots loader*/
+  .dots-loader-container {
+  	position: relative;
+  height: 300px;
+  width: 800px;
+  font-family: Helvetica;
+}
+
+.dots-loader {
+  height: 20px;
+  width: 250px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.dots-loader--dot {
+  animation-name: loader;
+  animation-timing-function: ease-in-out;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: black;
+  position: absolute;
+  border: 2px solid white;
+}
+.dots-loader--dot:first-child {
+  background-color: #8cc759;
+  animation-delay: 0.5s;
+}
+.dots-loader--dot:nth-child(2) {
+  background-color: #8c6daf;
+  animation-delay: 0.4s;
+}
+.dots-loader--dot:nth-child(3) {
+  background-color: #ef5d74;
+  animation-delay: 0.3s;
+}
+.dots-loader--dot:nth-child(4) {
+  background-color: #f9a74b;
+  animation-delay: 0.2s;
+}
+.dots-loader--dot:nth-child(5) {
+  background-color: #60beeb;
+  animation-delay: 0.1s;
+}
+.dots-loader--dot:nth-child(6) {
+  background-color: #fbef5a;
+  animation-delay: 0s;
+}
+.dots-loader--text {
+  position: absolute;
+  top: 200%;
+  left: 0;
+  right: 0;
+  width: 4rem;
+  margin: auto;
+}
+.dots-loader--text:after {
+  content: "Loading";
+  font-weight: bold;
+  animation-name: loading-text;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader {
+  15% {
+    transform: translateX(0);
+  }
+  45% {
+    transform: translateX(230px);
+  }
+  65% {
+    transform: translateX(230px);
+  }
+  95% {
+    transform: translateX(0);
+  }
+}
+@keyframes loading-text {
+  0% {
+    content: "Loading";
+  }
+  25% {
+    content: "Loading.";
+  }
+  50% {
+    content: "Loading..";
+  }
+  75% {
+    content: "Loading...";
+  }
+}
+
+
+/*line-box-loader*/
+.line-box-loader-container{
+	position: relative;
+  height: 300px;
+  width: 800px;
+}
+.line-box-loader {
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: helvetica, arial, sans-serif;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #ce4233;
+  letter-spacing: 0.2em;
+}
+.line-box-loader::before, .line-box-loader::after {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  background: #ce4233;
+  position: absolute;
+  -webkit-animation: load .7s infinite alternate ease-in-out;
+          animation: load .7s infinite alternate ease-in-out;
+}
+.line-box-loader::before {
+  top: 0;
+}
+.line-box-loader::after {
+  bottom: 0;
+}
+
+@-webkit-keyframes load {
+  0% {
+    left: 0;
+    height: 30px;
+    width: 15px;
+  }
+  50% {
+    height: 8px;
+    width: 40px;
+  }
+  100% {
+    left: 235px;
+    height: 30px;
+    width: 15px;
+  }
+}
+
+@keyframes load {
+  0% {
+    left: 0;
+    height: 30px;
+    width: 15px;
+  }
+  50% {
+    height: 8px;
+    width: 40px;
+  }
+  100% {
+    left: 235px;
+    height: 30px;
+    width: 15px;
+  }
+}
+
+
+/*teo - spinning loader*/
+
+@-moz-keyframes spinPulse {
+    0% {
+        -moz-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #D0181F;
+    }
+    50% {
+        -moz-transform: rotate(145deg);
+        opacity: 1;
+    }
+    100% {
+        -moz-transform: rotate(-320deg);
+        opacity: 0;
+    };
+}
+@-moz-keyframes spinoffPulse {
+    0% {
+        -moz-transform: rotate(0deg);
+    }
+    100% {
+        -moz-transform: rotate(360deg);
+    };
+}
+@-webkit-keyframes spinPulse {
+    0% {
+        -webkit-transform: rotate(160deg);
+        opacity: 0;
+        box-shadow: 0 0 1px #D0181F;
+    }
+    50% {
+        -webkit-transform: rotate(145deg);
+        opacity: 1;
+    }
+    100% {
+        -webkit-transform: rotate(-320deg);
+        opacity: 0;
+    };
+}
+@-webkit-keyframes spinoffPulse {
+    0% {
+        -webkit-transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(360deg);
+    };
+}
+
+/*#loading, .loading-text { display: none; }*/
+.loading-wrapper{
+	position: relative;
+  height: 300px;
+  width: 800px;
+}
+#loading { margin-top: 50px; }
+#loading  {
+    display: block;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.2);
+}
+.circle {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(208, 24, 31,0.9);
+    opacity: .9;
+    border-right: 5px solid rgba(0,0,0,0);
+    border-left: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 35px #D0181F;
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    -moz-animation: spinPulse 1s infinite ease-in-out;
+    -webkit-animation: spinPulse 1s infinite linear;
+}
+.circle1 {
+    background-color: rgba(0,0,0,0);
+    border: 5px solid rgba(208, 24, 31,0.9);
+    opacity: .9;
+    border-left: 5px solid rgba(0,0,0,0);
+    border-right: 5px solid rgba(0,0,0,0);
+    border-radius: 50px;
+    box-shadow: 0 0 15px #D0181F;
+    width: 30px;
+    height: 30px;
+    margin: 0 auto;
+    position: relative;
+    top: -40px;
+    -moz-animation: spinoffPulse 1s infinite linear;
+    -webkit-animation: spinoffPulse 1s infinite linear;
+}
+
+
+/* mikez ball*/
+.ball1 {
+   background-color: rgba(0,0,0,0);
+   border: 2px solid rgba(229, 0, 0, 0.9);
+   opacity: .9;
+   border-top: 5px solid rgba(0,0,0,0);
+   border-left: 5px solid rgba(0,0,0,0);
+   border-radius: 50%;
+   box-shadow: 0 0 15px #e72121;
+   width: 85px;
+   height: 85px;
+   margin: 0 auto;
+    position: relative;
+    top: -108.5px;
+    /* position: absolute; */
+    /* top: 52%; */
+    /* left: 49%; */
+   -moz-animation: spin .9s infinite linear;
+   -webkit-animation: spin .9s infinite linear;
+}
+
+.ball {
+   background-color: rgba(0,0,0,0);
+   border: 2px solid rgb(52, 152, 219);
+   opacity: .9;
+   border-top: 5px solid rgba(0,0,0,0);
+   border-left: 5px solid rgba(0,0,0,0);
+   border-radius: 50%;
+   box-shadow: 0 0 15px #3498db;
+   width: 120px;
+   height: 120px;
+   margin: 0 auto;
+    
+    /* top: 95px; */
+    /* position:absolute; */
+    /* top: 50%; */
+    /* left: 48%; */
+   -moz-animation: spinoff .9s infinite linear;
+   -webkit-animation: spinoff .9s infinite linear;
+}
+
+@-moz-keyframes spin {
+   0% {
+       -moz-transform: rotate(0deg);
+   }
+
+   100% {
+       -moz-transform: rotate(360deg);
+   };
+}
+
+@-moz-keyframes spinoff {
+   0% {
+       -moz-transform: rotate(0deg);
+   }
+
+   100% {
+       -moz-transform: rotate(-360deg);
+   };
+}
+
+@-webkit-keyframes spin {
+   0% {
+       -webkit-transform: rotate(0deg);
+   }
+
+   100% {
+       -webkit-transform: rotate(360deg);
+   };
+}
+
+@-webkit-keyframes spinoff {
+   0% {
+       -webkit-transform: rotate(0deg);
+   }
+
+   100% {
+       -webkit-transform: rotate(-360deg);
+   };
+}
+
+	</style>
+</head>
+<body>
+	<header>
+		<h1>Preloader gallery</h1>
+	</header>
+<form action="" method="post">
+
+	<h2> Vote for which one to adopt by ranking each 1-6 (1 is best, 6 is most not the best)</h2>
+	<label for="input1">Preloader 1: 
+		<input id="input1" name="input1" type="text"/>
+	</label>
+	<div class="loader-wrapper">
+		<div class="loader">
+			<div class="miniloader"></div>
+		</div>
+	</div>
+
+
+
+	<label for="input2">Preloader 2: 
+		<input id="input2" name="input2" type="text"/>
+	</label>
+<div class="loader-wrapper">
+	<div class="wrap">
+	  <div class="loading">
+	    <div class="bounceball"></div>
+	    <div class="text">NOW LOADING</div>
+	  </div>
+	</div>
+</div>
+
+		<label for="input3">Preloader 3: 
+			<input id="input3" name="input3" type="text"/>
+		</label>
+	<div class='loader-wrapper'>
+	  <div class='dots-loader'>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--dot'></div>
+	    <div class='dots-loader--text'></div>
+	  </div>
+	</div>
+
+		<label for="input4">Preloader 4: 
+			<input id="input4" name="input4" type="text"/>
+		</label>
+	<div class="loader-wrapper">
+		<div class="line-box-loader">Loading...</div>
+	</div>
+
+		<label for="input5">Preloader 5: 
+			<input id="input5" name="input5" type="text"/>
+		</label>
+	<div class="loader-wrapper">
+		<div id="loading" class="col-md-6 col-md-offset-3 col-sm-6 col-sm-offset-3 col-xs-12">
+		    <div class="circle"></div>
+		    <div class="circle1"></div>
+		</div>
+	</div>
+
+		<label for="input6">Preloader 6: 
+			<input id="input6" name="input6" type="text"/>
+		</label>
+	<div class="loader-wrapper">
+		<div class="ball"></div><div class="ball1"></div>
+	</div>
+
+	<div class="loader-wrapper-thin">Who Are You?<label for="whoareyou"><input type="text" name="whoareyou"> </label></div>
+
+	<div class="loader-wrapper-thin"><button type="submit" name="submit" class="btn btn-success">Submit Your Rankings</button></div>
+</form>
+
+	
+</body>
+</html>
